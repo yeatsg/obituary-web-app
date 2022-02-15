@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "axios": "^0.26.0",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.2",
     "hbs": "^4.2.0",
