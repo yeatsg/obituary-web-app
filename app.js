@@ -21,7 +21,7 @@ const bcrypt = require("bcryptjs");
 require("./config")(app);
 
 // default value for title local
-const projectName = "blah";
+const projectName = "Obituary Generator";
 const capitalized = (string) =>
   string[0].toUpperCase() + string.slice(1).toLowerCase();
 
@@ -51,10 +51,10 @@ app.use(
 
 const index = require("./routes/index");
 app.use("/", index);
-const admin = require("./routes/admin");
-app.use("/admin", admin);
-const createPost = require("./routes/create-post");
-app.use("/create-post", createPost);
+// const admin = require("./routes/admin");
+// app.use("/admin", admin);
+const obituaries = require("./routes/obituaries");
+app.use("/obituaries", obituaries);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
