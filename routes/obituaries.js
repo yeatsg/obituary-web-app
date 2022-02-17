@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const Obit = require("../models/Obit.model");
 
 /* GET obituary form */
-router.get("/create", (req, res, next) => {
+router.get("/create", (req, res) => {
   res.render("obituaries/create");
 });
 

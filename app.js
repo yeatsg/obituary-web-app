@@ -49,10 +49,21 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  if (req.session.admin) {
+    Admin.findById(req.session.admin._id).then((admin) => {
+      req.app.locals.globaluser = admin;
+      next();
+    });
+  } else {
+    next();
+  }
+});
+
 const index = require("./routes/index");
 app.use("/", index);
-// const admin = require("./routes/admin");
-// app.use("/admin", admin);
+const admin = require("./routes/admin");
+app.use("/admin", admin);
 const obituaries = require("./routes/obituaries");
 app.use("/obituaries", obituaries);
 

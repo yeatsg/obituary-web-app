@@ -11,8 +11,19 @@
 
   <body>
     <header>
-      <a href="/signup">New Account</a>
-      <a href="/login">Log In</a>
+      {{!-- <a href="/signup">New Account</a>
+      <a href="/login">Log In</a> --}}
+
+      <nav>
+        {{#if globalUser}}
+        <p>Hello, {{globalUser.username}}</p>
+        <a href="/auth/logout">Log out</a>
+        {{else}}
+        <a href="/auth/login">Log in</a>
+        <a href="/auth/signup">Create an account</a>
+        {{/if}}
+    </nav>
+
     </header>
     {{{body}}}
     <script src="/js/script.js"></script>
