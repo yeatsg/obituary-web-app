@@ -15,11 +15,18 @@ module.exports = (req, res, next) => {
             "0d606d157emshcdbc7685b5ffb85p19f6cdjsn62fcd40f1ae3",
         },
       })
-      .then(function (response) {
-        console.log(response.data);
+      .then((searchObject) => {
+        console.log(searchObject.data);
+        let articleIndex = Math.floor(
+          Math.random() * searchObject.data.entries.length
+        );
+        req.body.floridaManSlug = searchObject.data.entries[articleIndex].title;
+        req.body.floridaManURL = searchObject.data.entries[articleIndex].link;
+        console.log("new floridaManSlug", req.body.FloridaManSlug);
+        console.log("new URL", req.body.floridaManURL);
         next();
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.error(error);
       });
   }

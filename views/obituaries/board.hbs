@@ -6,4 +6,11 @@
 <p>{{this.floridaMan}}</p>
 <p>Some of their accomplishments include {{this.accomplishments}}</p>   
 </div>
-{{/each}}
+ {{#if globalUser}}
+<div>
+  <a href="/{{this._id}}/edit">Edit Post</a>
+  <a href="/{{this._id}}/delete">Delete Post</a>
+</div>
+{{/if}}
+<p>Created on {{this.timestamp}} | {{#if this.edittedByAdmin}} Post has been editted by an Admin {{/if}}</p>
+{{/each}} 

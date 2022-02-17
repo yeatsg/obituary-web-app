@@ -21,8 +21,17 @@ const obitSchema = new Schema(
       type: String,
       default: "",
     },
+    floridaManURL: {
+      type: String,
+      default: "",
+    },
     photoUrl: {
       type: String,
+    },
+    accomplishments: {
+      type: String,
+      default:
+        "... Well I'm sure they accomplished something in their years, but we weren't able to find anything.",
     },
   },
   { timestamps: true }
