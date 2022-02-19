@@ -16,13 +16,13 @@ module.exports = (req, res, next) => {
         },
       })
       .then((searchObject) => {
-        console.log(searchObject.data);
         let articleIndex = Math.floor(
           Math.random() * searchObject.data.entries.length
         );
+        console.log(searchObject.data.entries[articleIndex]);
         req.body.floridaManSlug = searchObject.data.entries[articleIndex].title;
         req.body.floridaManURL = searchObject.data.entries[articleIndex].link;
-        console.log("new floridaManSlug", req.body.FloridaManSlug);
+        console.log("new floridaManSlug", req.body.floridaManSlug);
         console.log("new URL", req.body.floridaManURL);
         next();
       })

@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
-const Obit = require("../models/Admin.model");
+const Admin = require("../models/Admin.model");
 
 // GET admin signup form
 
@@ -51,7 +51,7 @@ router.post("/login", (req, res) => {
         globalUser = req.session.admin;
         console.log("req.session.admin =", req.session.admin);
         console.log("Global user", globalUser);
-        res.redirect("/main");
+        res.redirect("/");
       }
     })
     .catch((err) => {

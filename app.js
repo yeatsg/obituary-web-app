@@ -49,6 +49,10 @@ app.use(
   })
 );
 
+// ADMIN model import and globalUser session function //  
+
+const Admin = require("./models/Admin.model")
+
 app.use((req, res, next) => {
   if (req.session.admin) {
     Admin.findById(req.session.admin._id).then((admin) => {
@@ -66,6 +70,7 @@ const admin = require("./routes/admin");
 app.use("/admin", admin);
 const obituaries = require("./routes/obituaries");
 app.use("/obituaries", obituaries);
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
