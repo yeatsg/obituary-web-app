@@ -1,22 +1,27 @@
+<h1>Admin Edit</h1>
+
 <p>Edit this file</p>
 
-<form action="/obituaries/{{displayObit._id}}/edit" method="post">
-    <label for="First Name">
+<form action="/obituaries/{{displayObit._id}}/edit" method="post" class="column">
+    <label for="First Name">First Name:
         <input name="firstName" type="text" value="{{displayObit.firstName}}">
     </label>
-    <label for="Last Name">
+    <label for="Last Name">Last Name:
         <input name="lastName" type="text" value="{{displayObit.lastName}}">
     </label>
-    <label for="causeOfDeath">
+    <label for="causeOfDeath">Cause of Death:
         <input name="causeOfDeath" type="text" value="{{displayObit.causeOfDeath}}">
     </label>
-    <label for="photoUrl">
+    <label for="photoUrl">Photo URL/Link:
             <input name="photoUrl" type="text" value="{{displayObit.photoUrl}}">
     </label>
-    <button type="submit">Submit</button>
+    <label for="accomplishments">Accomplishments include:
+            <input name="accomplishments" type="text" value="{{displayObit.accomplishments}}">
+    </label>
+    <button type="submit" class="button black padding-large large margin-top">Submit Changes</button>
 
 </form>
 
 <form action="/obituaries/{{displayObit._id}}/delete" method="POST">
-    <button type="submit">Delete this page from the board</button>
+    <button type="submit" class="button black padding-large large margin-top">Delete Post</button>
 </form>

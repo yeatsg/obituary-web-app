@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
     <title>{{title}}</title>
   </head>
@@ -16,14 +18,14 @@
 
       <nav class="bar green button card left-align large">
         <a href="/" class="bar-item button padding-large white">Home</a>
-        <a href="/about" class="bar-item button hide-small padding-large hover-white">About</a>
-        <a href="/obituaries/board" class="bar-item button hide-small padding-large hover-white">View All</a>
-        <a href="/obituaries/create" class="bar-item button hide-small padding-large hover-white">Create New</a>
+        <a href="/about" class="bar-item button hide-small padding-large">About</a>
+        <a href="/obituaries/board" class="bar-item button hide-small padding-large">View All</a>
+        <a href="/obituaries/create" class="bar-item button hide-small padding-large">Create New</a>
         {{#if globalUser}}
-        <a href="/admin/logout" class="bar-item button hide-small padding-large hover-white">Log out</a>
+        <a href="/admin/logout" class="bar-item button hide-small padding-large">Log out</a>
         {{else}}
-        <a href="/admin/login" class="bar-item button hide-small padding-large hover-white">Log in</a>
-        <a href="/admin/signup" class="bar-item button hide-small padding-large hover-white">Admin Signup</a>
+        <a href="/admin/login" class="bar-item button hide-small padding-large">Log in</a>
+        <a href="/admin/signup" class="bar-item button hide-small padding-large">Admin Signup</a>
         {{/if}}
     </nav>
     </header>

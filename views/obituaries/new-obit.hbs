@@ -1,5 +1,7 @@
-<h1 class="top-space">Heading</h1>
-    <div class="obit column">
+<div class="container green center">
+
+<h1 class="top-space">Post</h1>
+<div class="obit  column">
         <div class="obit-header">
             <img src="{{displayObit.photoUrl}}" alt="Image could not be found" class="obit-img"/>
             <div class="column">
@@ -14,14 +16,17 @@
         
             {{/if}}
         <p>Some of their recent accomplishments include {{displayObit.accomplishments}}.</p> 
-        <p>Created on {{displayObit.createdAt}}</p>
+        <p class="tiny-text">Created on {{displayObit.createdAt}}</p>   
 {{#if globalUser}}
-<div>
+<div class="row">
   <form action="/obituaries/{{displayObit._id}}/edit" method="GET">
     <button type="submit" class="button black padding-large large margin-top">Edit Post</button>
 </form>
   <form action="/obituaries/{{displayObit._id}}/delete" method="POST">
     <button type="submit" class="button black padding-large large margin-top">Delete Post</button>
 </form>
+ </div>
 </div>
 {{/if}}
+
+</div>

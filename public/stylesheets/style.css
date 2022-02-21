@@ -1,6 +1,8 @@
 /* Large structural */
 
-/* body */
+body {
+  margin: 0px;
+}
 
 body,
 h1,
@@ -41,7 +43,7 @@ body {
 .green,
 .hover-green:hover {
   color: white;
-  background-color: aquamarine;
+  background-color: steelblue;
 }
 
 .right {
@@ -87,9 +89,9 @@ a {
   background-color: transparent;
 }
 
-.top-space {
+/* .top-space {
   margin-top: 60px;
-}
+} */
 
 /* Nav Bar */
 
@@ -112,6 +114,10 @@ a {
 
 /* Landing page */
 
+.text-padding {
+  margin: 0px 15% 0px 15%;
+}
+
 .center {
   text-align: center !important;
 }
@@ -121,9 +127,9 @@ a {
   padding: 0.01em 16px;
 }
 
-.margin {
+/* .margin {
   margin: 16px !important;
-}
+} */
 
 .xlarge {
   font-size: 24px !important;
@@ -177,6 +183,8 @@ h1 {
   width: 35%;
   margin: 60px;
   padding: 20px;
+  color: black;
+  background-color: white;
 }
 
 .obit-header {
@@ -187,4 +195,20 @@ h1 {
 .column {
   display: flex;
   flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.container {
+  padding-bottom: 80px;
+}
+
+/*  */
+
+.tiny-text {
+  font-size: x-small;
 }

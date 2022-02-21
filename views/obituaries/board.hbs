@@ -1,4 +1,8 @@
+<div class="container green center">
+
 <h2>All Posts</h2>
+
+<p>All obituaries below are not real and have been generated through this site's user community. Right now that's just me.</p>
 
 <div class="library">
     {{#each allObits}}
@@ -17,8 +21,9 @@
         
             {{/if}}
         <p>Some of their recent accomplishments include {{this.accomplishments}}.</p> 
-        <p>Created on {{this.createdAt}}</p>
-        <a href="/obituaries/{{this._id}}">View</a>
+        <p class="tiny-text">Created on {{this.createdAt}}</p>
+        <a href="/obituaries/{{this._id}}" class="button black padding-large large margin-top">View</a>
     </div>
     {{/each}}
+</div>
 </div>

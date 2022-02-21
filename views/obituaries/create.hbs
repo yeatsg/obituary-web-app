@@ -1,13 +1,28 @@
+<div class="container green center">
+
 <h3>Content Creator</h3>
 
 <p>Fill out the following information</p>
 
-<form method="POST" action="/obituaries/create">
-    <input name="firstName" type="text">
-    <input name="lastName" type="text">
-    <input name="causeOfDeath" type="text">
-    <input name="floridaMan" type="checkbox">
-    <input name="photoUrl" type="text">
-    <input name="accomplishments" type="text">
-    <button type="submit">Submit</button>
+<form method="POST" action="/obituaries/create" class="column">
+    <label for="First Name">First Name:
+        <input name="firstName" type="text" value="{{displayObit.firstName}}">
+    </label>
+    <label for="Last Name">Last Name:
+        <input name="lastName" type="text" value="{{displayObit.lastName}}">
+    </label>
+    <label for="causeOfDeath">Cause of Death:
+        <input name="causeOfDeath" type="text" value="{{displayObit.causeOfDeath}}">
+    </label>
+    <label>Is the deceased a "Florida Man"?
+        <input name="floridaMan" type="checkbox">
+    </label>
+    <label for="photoUrl">Photo URL/Link:
+            <input name="photoUrl" type="text" value="{{displayObit.photoUrl}}">
+    </label>
+    <label for="accomplishments">Accomplishments include:
+            <input name="accomplishments" type="text" value="{{displayObit.accomplishments}}">
+    </label>
+    <button type="submit" class="button black padding-large large margin-top">Submit</button>
 </form>
+</div>
