@@ -1,0 +1,115 @@
+/* Large structural */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+
+html,
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.top {
+  top: 0;
+}
+
+.top,
+.bottom {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.green,
+.hover-green:hover {
+  color: white;
+  background-color: aquamarine;
+}
+
+.right {
+  float: right !important;
+}
+
+.padding-large {
+  padding-top: 12px !important;
+  padding-right: 24px !important;
+  padding-bottom: 12px !important;
+  padding-left: 24px !important;
+}
+
+.large {
+  font-size: 18px !important;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.bar,
+h1,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+.card {
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 /12%);
+}
+
+.bar {
+  width: 100%;
+  overflow: hidden;
+}
+
+div {
+  display: block;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+a {
+  color: iherit;
+  background-color: transparent;
+}
+
+/* Nav Bar */
+
+.bar .button {
+  white-space: normal;
+}
+
+.bar .bar-item {
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+}
+
+.white {
+  color: black;
+  background-color: white;
+}
+
+.button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}

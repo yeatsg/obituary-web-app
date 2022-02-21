@@ -6,7 +6,6 @@ module.exports = (req,res,next) => {
     } else {
         req.body.floridaMan = false
     };
-    console.log("Results of checkboxCheck:", results);
     console.log("req.body", req.body);
     next();
     }

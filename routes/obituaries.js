@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const checkboxCheck = require("../middleware/checkboxCheck")
 const floridaManStatus = require("../middleware/floridaManStatus");
 const adminLogged = require("../middleware/adminLogged");
 const bcrypt = require("bcryptjs");
@@ -9,7 +10,7 @@ router.get("/create", (req, res) => {
   res.render("obituaries/create");
 });
 
-router.post("/create", floridaManStatus, (req, res, next) => {
+router.post("/create", checkboxCheck, floridaManStatus, (req, res, next) => {
   Obit.create({
     firstName: req.body.firstName,
     lastName: req.body.lastName,

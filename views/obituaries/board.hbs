@@ -2,9 +2,11 @@
 
 {{#each allObits}}
 <div>
-  <p>Rest in Peace {{this.firstName}} {{this.lastName}}</p>
-<p>{{this.floridaMan}}</p>
-<p>Some of their accomplishments include {{this.accomplishments}}</p>   
+<img src="{{this.photoUrl}}" alt="Image could not be found"/>
+<p>Rest in Peace {{this.firstName}} {{this.lastName}}</p>
+<p>Death came unexpectedly via {{this.causeOfDeath}}</p>
+<p><a href="{{this.floridaManUrl}}">{{this.floridaManSlug}}</a></p>
+<p>Some of their accomplishments include {{this.accomplishments}}</p> 
 </div>
  {{#if globalUser}}
 <div>
@@ -12,5 +14,5 @@
   <a href="/{{this._id}}/delete">Delete Post</a>
 </div>
 {{/if}}
-<p>Created on {{this.timestamp}} | {{#if this.edittedByAdmin}} Post has been editted by an Admin {{/if}}</p>
+<p>Created on {{this.createdAt}} | {{#if this.edittedByAdmin}} Post has been editted by an Admin {{/if}}</p>
 {{/each}} 
