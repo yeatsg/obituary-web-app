@@ -5,14 +5,13 @@
 <img src="{{this.photoUrl}}" alt="Image could not be found"/>
 <p>Rest in Peace {{this.firstName}} {{this.lastName}}</p>
 <p>Death came unexpectedly via {{this.causeOfDeath}}</p>
-<p><a href="{{this.floridaManUrl}}">{{this.floridaManSlug}}</a></p>
+
+{{#if this.floridaManSlug}}
+<p>You may have seen them in the news: <a href="{{this.floridaManUrl}}">{{this.floridaManSlug}}</a></p>
 <p>Some of their accomplishments include {{this.accomplishments}}</p> 
 </div>
- {{#if globalUser}}
-<div>
-  <a href="/{{this._id}}/edit">Edit Post</a>
-  <a href="/{{this._id}}/delete">Delete Post</a>
-</div>
 {{/if}}
+
 <p>Created on {{this.createdAt}} | {{#if this.edittedByAdmin}} Post has been editted by an Admin {{/if}}</p>
-{{/each}} 
+<a href="/obituaries/{{this._id}}">View</a>
+{{/each}}

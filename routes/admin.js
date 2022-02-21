@@ -20,7 +20,7 @@ router.post("/signup", (req, res) => {
     .then((results) => {
       console.log("New Admin was created", results);
       req.session.admin = results;
-      globalUser = req.session.admin;
+      req.app.locals.globalUser = req.session.admin;
       console.log("Req.session.admin", req.session.admin);
       console.log("Global User", globalUser);
       res.redirect("/");
@@ -48,9 +48,9 @@ router.post("/login", (req, res) => {
       } else {
         console.log("Admin was logged in", foundUser);
         req.session.admin = foundUser;
-        globalUser = req.session.admin;
+        req.app.locals.globalUser = req.session.admin;
         console.log("req.session.admin =", req.session.admin);
-        console.log("Global user", globalUser);
+        console.log("Global user", req.app.locals.globalUser);
         res.redirect("/");
       }
     })
@@ -63,6 +63,7 @@ router.post("/login", (req, res) => {
 
 router.get("/logout", (req, res) => {
   req.session.destroy();
+  req.app.locals.globalUser = null;
   res.redirect("/login");
 });
 

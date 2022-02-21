@@ -9,6 +9,8 @@ require("./db");
 // https://www.npmjs.com/package/express
 const express = require("express");
 
+const path = require("path");
+
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
@@ -17,6 +19,7 @@ const app = express();
 
 const bcrypt = require("bcryptjs");
 
+app.use(express.static(path.join(__dirname, "..", "public")));
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
@@ -56,7 +59,7 @@ const Admin = require("./models/Admin.model")
 app.use((req, res, next) => {
   if (req.session.admin) {
     Admin.findById(req.session.admin._id).then((admin) => {
-      req.app.locals.globaluser = admin;
+      req.app.locals.globalUser = admin;
       next();
     });
   } else {

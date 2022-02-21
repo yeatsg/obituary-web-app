@@ -1,0 +1,22 @@
+<p>Edit this file</p>
+
+<form action="/obituaries/{{displayObit._id}}/edit" method="post">
+    <label for="First Name">
+        <input name="firstName" type="text" value="{{displayObit.firstName}}">
+    </label>
+    <label for="Last Name">
+        <input name="lastName" type="text" value="{{displayObit.lastName}}">
+    </label>
+    <label for="causeOfDeath">
+        <input name="causeOfDeath" type="text" value="{{displayObit.causeOfDeath}}">
+    </label>
+    <label for="photoUrl">
+            <input name="photoUrl" type="text" value="{{displayObit.photoUrl}}">
+    </label>
+    <button type="submit">Submit</button>
+
+</form>
+
+<form action="/obituaries/{{displayObit._id}}/delete" method="post">
+    <button type="submit">Delete this page from the board</button>
+</form>

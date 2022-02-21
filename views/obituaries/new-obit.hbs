@@ -1,6 +1,13 @@
 <h1>Heading</h1>
-<img src="{{this.photoUrl}}" alt="Image could not be found"/>
-<p>Rest in Peace {{this.firstName}} {{this.lastName}}</p>
-<p>Death came unexpectedly via {{this.causeOfDeath}}</p>
-<p><a href="{{this.floridaManUrl}}">{{this.floridaManSlug}}</a></p>
-<p>Some of their accomplishments include {{this.accomplishments}}</p> 
+<img src="{{displayObit.photoUrl}}" alt="Image could not be found"/>
+<p>Rest in Peace {{displayObit.firstName}} {{displayObit.lastName}}</p>
+<p>Death came unexpectedly via {{displayObit.causeOfDeath}}</p>
+<p><a href="{{displayObit.floridaManUrl}}">{{displayObit.floridaManSlug}}</a></p>
+<p>Some of their accomplishments include {{displayObit.accomplishments}}</p> 
+
+{{#if globalUser}}
+<div>
+  <a href="/{{this._id}}/edit">Edit Post</a>
+  <a href="/{{this._id}}/delete">Delete Post</a>
+</div>
+{{/if}}

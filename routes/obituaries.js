@@ -18,10 +18,11 @@ router.post("/create", checkboxCheck, floridaManStatus, (req, res, next) => {
     floridaMan: req.body.floridaMan,
     floridaManSlug: req.body.floridaManSlug,
     photoUrl: req.body.photoUrl,
+    accomplishments: req.body.accomplishments,
   })
     .then((newObit) => {
       console.log("New obit created,", newObit);
-      res.redirect("/:id");
+      res.redirect(`/obituaries/${newObit._id}`);
     })
     .catch((err) => {
       console.log("err", err);
@@ -31,10 +32,12 @@ router.post("/create", checkboxCheck, floridaManStatus, (req, res, next) => {
 // GET all obits on board
 
 router.get("/board", (req, res) => {
+  console.log("globalUser log", req.app.locals.globalUser)
   Obit.find()
     .then((results) => {
       res.render("obituaries/board", {
         allObits: results,
+        globalUser: "test",
       });
     })
     .catch((err) => {
@@ -45,6 +48,7 @@ router.get("/board", (req, res) => {
 router.get("/:id", (req, res) => {
   Obit.findById(req.params.id)
     .then((results) => {
+      console.log("found obituary", req.params_id)
       res.render("obituaries/new-obit", {
         displayObit: results,
       });
@@ -57,6 +61,7 @@ router.get("/:id", (req, res) => {
 router.get("/:id/edit", adminLogged, (req, res) => {
   Obit.findById(req.params.id)
     .then((results) => {
+      console.log("Obituary that has been found", results)
       res.render("obituaries/edit", {
         displayObit: results,
       });
@@ -69,7 +74,7 @@ router.get("/:id/edit", adminLogged, (req, res) => {
 router.post("/:id/edit", adminLogged, (req, res) => {
   Obit.findByIdAndUpdate(req.params, req.body)
     .then((results) => {
-      res.redirect("/index");
+      res.redirect("/obituaries/board");
     })
     .catch((err) => {
       console.log("Something went wrong", err);
@@ -77,10 +82,10 @@ router.post("/:id/edit", adminLogged, (req, res) => {
 });
 
 router.post("/:id/delete", adminLogged, (req, res) => {
-  Obit.findByIdAndRemove(req.params, req.body)
+  Obit.findByIdAndRemove(req.params.id)
     .then((results) => {
       console.log("This is the article that has been deleted", results);
-      res.redirect("/board");
+      res.redirect("/obituaries/board");
     })
     .catch((err) => {
       console.log("Something went wrong", err);
