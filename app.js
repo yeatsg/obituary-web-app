@@ -46,7 +46,7 @@ app.use(
       // secure: true
     },
     store: MongoStore.create({
-      mongoUrl: "mongodb://localhost/signup-test",
+      mongoUrl: process.env.MONGODB_URI,
       ttl: 600000,
     }),
   })
