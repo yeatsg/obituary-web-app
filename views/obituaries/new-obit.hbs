@@ -1,13 +1,27 @@
-<h1>Heading</h1>
-<img src="{{displayObit.photoUrl}}" alt="Image could not be found"/>
-<p>Rest in Peace {{displayObit.firstName}} {{displayObit.lastName}}</p>
-<p>Death came unexpectedly via {{displayObit.causeOfDeath}}</p>
-<p><a href="{{displayObit.floridaManUrl}}">{{displayObit.floridaManSlug}}</a></p>
-<p>Some of their accomplishments include {{displayObit.accomplishments}}</p> 
+<h1 class="top-space">Heading</h1>
+    <div class="obit column">
+        <div class="obit-header">
+            <img src="{{displayObit.photoUrl}}" alt="Image could not be found" class="obit-img"/>
+            <div class="column">
+                <h2>Rest in Peace</h3>
+                <p>{{displayObit.firstName}} {{displayObit.lastName}}</p>
+            </div>
+        </div>
+            <p>It is with a heavy heart we share we have lost {{displayObit.firstName}} to {{displayObit.causeOfDeath}}.</p>
 
+            {{#if displayObit.floridaManSlug}}
+            <p>Unfortunately, you may have heard about it on the news: <a href="{{displayObit.floridaManUrl}}">{{displayObit.floridaManSlug}}</a></p>
+        
+            {{/if}}
+        <p>Some of their recent accomplishments include {{displayObit.accomplishments}}.</p> 
+        <p>Created on {{displayObit.createdAt}}</p>
 {{#if globalUser}}
 <div>
-  <a href="/{{this._id}}/edit">Edit Post</a>
-  <a href="/{{this._id}}/delete">Delete Post</a>
+  <form action="/obituaries/{{displayObit._id}}/edit" method="GET">
+    <button type="submit" class="button black padding-large large margin-top">Edit Post</button>
+</form>
+  <form action="/obituaries/{{displayObit._id}}/delete" method="POST">
+    <button type="submit" class="button black padding-large large margin-top">Delete Post</button>
+</form>
 </div>
 {{/if}}

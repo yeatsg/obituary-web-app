@@ -70,7 +70,8 @@ router.get("/:id/edit", adminLogged, (req, res) => {
 });
 
 router.post("/:id/edit", adminLogged, (req, res) => {
-  Obit.findByIdAndUpdate(req.params, req.body)
+  console.log("params", req.params.id, "body", req.body)
+  Obit.findByIdAndUpdate(req.params.id, req.body)
     .then((results) => {
       res.redirect("/obituaries/board");
     })

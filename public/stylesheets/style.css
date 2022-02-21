@@ -1,5 +1,7 @@
 /* Large structural */
 
+/* body */
+
 body,
 h1,
 h2,
@@ -15,6 +17,14 @@ body {
   font-family: Verdana, sans-serif;
   font-size: 15px;
   line-height: 1.5;
+}
+
+.body-marg {
+  margin: 0px 10% 0px 10%;
+}
+
+* {
+  box-sizing: inherit;
 }
 
 .top {
@@ -72,13 +82,13 @@ div {
   display: block;
 }
 
-* {
-  box-sizing: inherit;
-}
-
 a {
   color: iherit;
   background-color: transparent;
+}
+
+.top-space {
+  margin-top: 60px;
 }
 
 /* Nav Bar */
@@ -100,6 +110,41 @@ a {
   background-color: white;
 }
 
+/* Landing page */
+
+.center {
+  text-align: center !important;
+}
+
+.container,
+.panel {
+  padding: 0.01em 16px;
+}
+
+.margin {
+  margin: 16px !important;
+}
+
+.xlarge {
+  font-size: 24px !important;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+/* button styles */
+
+.black {
+  color: white !important;
+  background-color: black !important;
+}
+
+.margin-top {
+  margin-top: 16px !important;
+}
+
+.btn,
 .button {
   border: none;
   display: inline-block;
@@ -112,4 +157,34 @@ a {
   text-align: center;
   cursor: pointer;
   white-space: nowrap;
+}
+
+/* obits page */
+
+.library {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.obit-img {
+  height: 200px;
+  border-radius: 25% 10%;
+}
+
+.obit {
+  border-style: outset;
+  width: 35%;
+  margin: 60px;
+  padding: 20px;
+}
+
+.obit-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }

@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <header class="top">
+    <header>
       {{!-- <a href="/signup">New Account</a>
       <a href="/login">Log In</a> --}}
 
@@ -20,17 +20,17 @@
         <a href="/obituaries/board" class="bar-item button hide-small padding-large hover-white">View All</a>
         <a href="/obituaries/create" class="bar-item button hide-small padding-large hover-white">Create New</a>
         {{#if globalUser}}
-        <p>Hello, {{globalUser.username}}</p>
         <a href="/admin/logout" class="bar-item button hide-small padding-large hover-white">Log out</a>
         {{else}}
         <a href="/admin/login" class="bar-item button hide-small padding-large hover-white">Log in</a>
-        <a href="/admin/signup" class="bar-item button hide-small padding-large hover-white">Create an account</a>
+        <a href="/admin/signup" class="bar-item button hide-small padding-large hover-white">Admin Signup</a>
         {{/if}}
     </nav>
-
     </header>
+    <div class="body-marg">
     {{{body}}}
-    <script src="/js/script.js"></script>
+    </div>
+    {{!-- <script src="/js/script.js"></script> --}}
   </body>
 
 </html>

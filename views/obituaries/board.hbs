@@ -1,17 +1,24 @@
-<h2>Complete Board</h2>
+<h2>All Posts</h2>
 
-{{#each allObits}}
-<div>
-<img src="{{this.photoUrl}}" alt="Image could not be found"/>
-<p>Rest in Peace {{this.firstName}} {{this.lastName}}</p>
-<p>Death came unexpectedly via {{this.causeOfDeath}}</p>
+<div class="library">
+    {{#each allObits}}
+    <div class="obit column">
+        <div class="obit-header">
+            <img src="{{this.photoUrl}}" alt="Image could not be found" class="obit-img"/>
+            <div class="column">
+                <h2>Rest in Peace</h3>
+                <p>{{this.firstName}} {{this.lastName}}</p>
+            </div>
+        </div>
+            <p>It is with a heavy heart we share we have lost {{this.firstName}} to {{this.causeOfDeath}}.</p>
 
-{{#if this.floridaManSlug}}
-<p>You may have seen them in the news: <a href="{{this.floridaManUrl}}">{{this.floridaManSlug}}</a></p>
-<p>Some of their accomplishments include {{this.accomplishments}}</p> 
+            {{#if this.floridaManSlug}}
+            <p>Unfortunately, you may have heard about it on the news: <a href="{{this.floridaManUrl}}">{{this.floridaManSlug}}</a></p>
+        
+            {{/if}}
+        <p>Some of their recent accomplishments include {{this.accomplishments}}.</p> 
+        <p>Created on {{this.createdAt}}</p>
+        <a href="/obituaries/{{this._id}}">View</a>
+    </div>
+    {{/each}}
 </div>
-{{/if}}
-
-<p>Created on {{this.createdAt}} | {{#if this.edittedByAdmin}} Post has been editted by an Admin {{/if}}</p>
-<a href="/obituaries/{{this._id}}">View</a>
-{{/each}}
