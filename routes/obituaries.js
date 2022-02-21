@@ -32,12 +32,10 @@ router.post("/create", checkboxCheck, floridaManStatus, (req, res, next) => {
 // GET all obits on board
 
 router.get("/board", (req, res) => {
-  console.log("globalUser log", req.app.locals.globalUser)
   Obit.find()
     .then((results) => {
       res.render("obituaries/board", {
-        allObits: results,
-        globalUser: "test",
+        allObits: results
       });
     })
     .catch((err) => {
